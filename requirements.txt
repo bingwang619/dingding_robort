@@ -1,0 +1,4 @@
+requests
+celery
+redis
+ipython
