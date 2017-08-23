@@ -6,7 +6,7 @@ var NOTIFY_URL = "https://oapi.dingtalk.com/robot/send?access_token="
     + "c6d5a2936381dfc29394f3c336bea5fad962d90ffd31809exxxxxxxxxxxxx"
 var MOBILE_NUMBER = "176xxxxx619"
 
-//initLocalStorage();
+initLocalStorage();
 
 function initLocalStorage(){
     localStorage.clear();
