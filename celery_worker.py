@@ -31,7 +31,6 @@ def notify_dingding(msg):
     }
 
     r = requests.post(NOTIFY_URL, headers=headers, data=json.dumps(post_data))
-    time.sleep(5)
     print(r.content)
 
 
@@ -47,13 +46,8 @@ worker.conf.update(
         "morning_msg_2": {
             "task": "celery_worker.notify_dingding",
             "schedule": crontab(minute=30, hour=7),
-            "args": ("开始集中精神干活辣",)
-        },
-        "morning_msg_3": {
-            "task": "celery_worker.notify_dingding",
-            "schedule": crontab(minute=0, hour=8),
             "args": ("我就问问你在干活咩",)
-        },
+        }
     }
 )
 
