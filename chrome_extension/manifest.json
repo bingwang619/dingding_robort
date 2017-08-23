@@ -1,0 +1,16 @@
+{
+  "name": "block zhihu",
+  "version": "0.1",
+  "description": "Notify dingding every 5 minuntes for browsing zhihu",
+  "permissions": [
+    "tabs",
+    "storage",
+    "alarms",
+    "idle",
+    "https://oapi.dingtalk.com/"
+  ],
+  "background": {
+    "scripts": ["jquery-3.2.1.min.js","bg.js"]
+  },
+  "manifest_version": 2
+}
