@@ -105,14 +105,14 @@ function classifyDomin(domain){
     var in_list = false;
     for (var i in track_sites){
         if(domain.match(track_sites[i])){
-            addTimeDelta(track_sites[i]);
+            isElapsedTime(track_sites[i]);
             in_list = true;
             break
         }
     }
     // 不在黑名单里面的域名作为 null 处理
     if(in_list == false){
-        addTimeDelta("null");
+        isElapsedTime("null");
     }
 }
 
@@ -124,7 +124,7 @@ function getCurrentTabDomin(){
             var domain = url.hostname;
             classifyDomin(domain);
         } else if (tabs.length == 0){
-            addTimeDelta("null");
+            isElapsedTime("null");
         } else {
             console.log("奇怪，找到不止一个 tabs active?");
             console.log(tabs);
@@ -142,7 +142,7 @@ chrome.idle.onStateChanged.addListener(function(idleState){
         getCurrentTabDomin();
     }else{
         localStorage["is_idle"] = true;
-        addTimeDelta("null");
+        isElapsedTime("null");
     }
 })
 
